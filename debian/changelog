@@ -1,0 +1,7 @@
+git-nautilus-icons (2.2.0-1) UNRELEASED; urgency=medium
+
+  * Initial Debian packaging.
+  * Provide shared icon package and Nemo, Nautilus, and Caja extension
+    packages.
+
+ -- Reaper <JohnGrimmReaper@disroot.org>  Tue, 30 Jun 2026 04:34:30 +0000

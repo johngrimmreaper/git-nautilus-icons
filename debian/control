@@ -1,0 +1,76 @@
+Source: git-nautilus-icons
+Section: utils
+Priority: optional
+Maintainer: Reaper <JohnGrimmReaper@disroot.org>
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://github.com/chrisjbillington/git-nautilus-icons
+
+Package: git-nautilus-icons-common
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ hicolor-icon-theme
+Breaks:
+ nemo-git-nautilus-icons (<< ${binary:Version})
+Replaces:
+ nemo-git-nautilus-icons (<< ${binary:Version})
+Description: Git status emblem icons for file manager extensions
+ This package contains the shared Git status emblem icons used by the
+ git-nautilus-icons file manager extensions.
+ .
+ These icons are used by the Nemo, Nautilus, and Caja extension packages.
+
+Package: nemo-git-nautilus-icons
+Architecture: all
+Depends:
+ ${misc:Depends},
+ git,
+ git-nautilus-icons-common (= ${binary:Version}),
+ nemo,
+ nemo-python,
+ python3,
+ python3-gi
+Description: Git status emblems for Nemo
+ This package installs a Nemo Python extension that overlays Git status
+ emblems on files and directories inside Git repositories.
+ .
+ It can show modified, added, deleted, untracked, clean, repository,
+ and ahead-of-remote states directly in the Nemo file manager.
+
+Package: nautilus-git-nautilus-icons
+Architecture: all
+Depends:
+ ${misc:Depends},
+ git,
+ git-nautilus-icons-common (= ${binary:Version}),
+ nautilus,
+ python3,
+ python3-gi,
+ python3-nautilus
+Description: Git status emblems for Nautilus
+ This package installs a Nautilus Python extension that overlays Git status
+ emblems on files and directories inside Git repositories.
+ .
+ It can show modified, added, deleted, untracked, clean, repository,
+ and ahead-of-remote states directly in the Nautilus file manager.
+
+Package: caja-git-nautilus-icons
+Architecture: all
+Depends:
+ ${misc:Depends},
+ git,
+ git-nautilus-icons-common (= ${binary:Version}),
+ caja,
+ python3,
+ python3-gi,
+ python3-caja
+Description: Git status emblems for Caja
+ This package installs a Caja Python extension that overlays Git status
+ emblems on files and directories inside Git repositories.
+ .
+ It can show modified, added, deleted, untracked, clean, repository,
+ and ahead-of-remote states directly in the Caja file manager.
